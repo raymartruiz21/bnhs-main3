@@ -1,0 +1,309 @@
+@extends('../layout/app')
+@section('content')
+<section class="section">
+    @php
+    $sum7=0;
+    $sum8=0;
+    $sum9=0;
+    $sum10=0;
+    $seven=0;
+    $eight=0;
+    $nine=0;
+    $ten=0;
+    function computedGrade($first,$second,$third,$fourth, $need){
+    switch ($need) {
+    case 'final':
+    if (!empty($first) && !empty($second) && !empty($third) && !empty($fourth)) {
+    $final = intval($first) + intval($second) + intval($third) + intval($fourth);
+    return round($final / 4);
+    }
+    break;
+    case 'remark':
+    if (!empty($first) && !empty($second) && !empty($third) && !empty($fourth)) {
+    $final = intval($first) + intval($second) + intval($third) + intval($fourth);
+    return round($final / 4)<75?'Failed':'Passed'; } default: return false; break; } } @endphp <div
+        class="section-body">
+        <h2 class="section-title">
+            Student: {{ $student->student_lastname.', '.$student->student_firstname.' '.$student->student_middlename }}
+        </h2>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card ">
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <td>
+
+                                            Section:
+                                            <span class="badge bg-info">{{  $recordSeven[0]->section_name }}</span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            Class Adviser:
+                                            <span class="badge bg-info pt-1 pb-1">
+                                                {{  $recordSeven[0]->fullname }}
+                                            </span> &nbsp;&nbsp;
+                                            Grade Level: <b>7</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">LEARNING AREAS</td>
+                                        <td colspan="4" class="text-center">Quarterly Rating</td>
+                                        <td rowspan="2" class="text-center">Final Rating</td>
+                                        <td rowspan="2">Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($recordSeven as $item)
+                                    <tr>
+                                        <th>{{ $item->descriptive_title }}</th>
+                                        <th>{{ $item->first }}</th>
+                                        <th>{{ $item->second }}</th>
+                                        <th>{{ $item->third }}</th>
+                                        <th>{{ $item->fourth }}</th>
+                                        <th>
+                                            {{ computedGrade($item->first,$item->second,$item->third,$item->fourth,'final') }}
+                                        </th>
+                                        <th>
+                                            {{ computedGrade($item->first,$item->second,$item->third,$item->fourth,'remark') }}
+                                            @php
+                                            $seven++;
+                                            $sum7+=computedGrade($item->first,$item->second,$item->third,$item->fourth,'final')
+                                            @endphp
+                                        </th>
+                                    </tr>
+                                    @endforeach
+                                    <tr>
+                                        <th></th>
+                                        <th colspan="4" class="text-center">General Average</th>
+                                        <th>{{ $seven!=0? round($sum7/$seven):'0' }}</th>
+                                        <th colspan="1">
+                                            {{ $seven!=0? round($sum7/$seven)<75?'Failed':'Passed':'0' }}
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {{-- EIGHT --}}
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card ">
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <td>
+
+                                            Section:
+                                            <span
+                                                class="badge badge-info">{{  $recordEight[0]->section_name?? 'N/A' }}</span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            Class Adviser:
+                                            <span class="badge badge-info pt-1 pb-1">
+                                                {{  $recordEight[0]->fullname?? 'N/A' }}
+                                            </span> &nbsp;&nbsp;
+                                            Grade Level: <b>8</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">LEARNING AREAS</td>
+                                        <td colspan="4" class="text-center">Quarterly Rating</td>
+                                        <td rowspan="2" class="text-center">Final Rating</td>
+                                        <td rowspan="2">Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (!empty($recordEight))
+                                    @foreach ($recordEight as $item)
+                                    <tr>
+                                        <th>{{ $item->descriptive_title }}</th>
+                                        <th>{{ $item->first }}</th>
+                                        <th>{{ $item->second }}</th>
+                                        <th>{{ $item->third }}</th>
+                                        <th>{{ $item->fourth }}</th>
+                                        <th>
+                                            {{ computedGrade($item->first,$item->second,$item->third,$item->fourth,'final') }}
+                                        </th>
+                                        <th>
+                                            {{ computedGrade($item->first,$item->second,$item->third,$item->fourth,'remark') }}
+                                            @php
+                                            $eight++;
+                                            $sum8+=computedGrade($item->first,$item->second,$item->third,$item->fourth,'final')
+                                            @endphp
+                                        </th>
+                                    </tr>
+                                    @endforeach
+                                    @endif
+                                    <tr>
+                                        <th></th>
+                                        <th colspan="4" class="text-center">General Average</th>
+                                        <th>{{ $eight!=0? round($sum8/$eight):'0' }}</th>
+                                        <th colspan="1">
+                                            {{ $eight!=0? round($sum8/$eight)<75?'Failed':'Passed':'0' }}
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {{-- NINE --}}
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card ">
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <td>
+
+                                            Section:
+                                            <span
+                                                class="badge badge-info">{{  $recordNine[0]->section_name?? 'N/A' }}</span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            Class Adviser:
+                                            <span class="badge badge-info pt-1 pb-1">
+                                                {{  $recordNine[0]->fullname?? 'N/A' }}
+                                            </span> &nbsp;&nbsp;
+                                            Grade Level: <b>9</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">LEARNING AREAS</td>
+                                        <td colspan="4" class="text-center">Quarterly Rating</td>
+                                        <td rowspan="2" class="text-center">Final Rating</td>
+                                        <td rowspan="2">Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (!empty($recordNine))
+                                    @foreach ($recordNine as $item)
+                                    <tr>
+                                        <th>{{ $item->descriptive_title }}</th>
+                                        <th>{{ $item->first }}</th>
+                                        <th>{{ $item->second }}</th>
+                                        <th>{{ $item->third }}</th>
+                                        <th>{{ $item->fourth }}</th>
+                                        <th>
+                                            {{ computedGrade($item->first,$item->second,$item->third,$item->fourth,'final') }}
+                                        </th>
+                                        <th>
+                                            {{ computedGrade($item->first,$item->second,$item->third,$item->fourth,'remark') }}
+                                            @php
+                                            $nine++;
+                                            $sum9+=computedGrade($item->first,$item->second,$item->third,$item->fourth,'final')
+                                            @endphp
+                                        </th>
+                                    </tr>
+                                    @endforeach
+                                    @endif
+                                    <tr>
+                                        <th></th>
+                                        <th colspan="4" class="text-center">General Average</th>
+                                        <th>{{ $nine!=0? round($sum9/$nine):'0' }}</th>
+                                        <th colspan="1">
+                                            {{ $nine!=0? round($sum9/$nine)<75?'Failed':'Passed':'0' }}
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                {{-- TEN --}}
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="card ">
+                        <div class="card-body">
+                            <table class="table table-bordered ">
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            Section:
+                                            <span
+                                                class="badge badge-info">{{  $recordTen[0]->section_name?? 'N/A' }}</span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            Class Adviser:
+                                            <span class="badge badge-info pt-1 pb-1">
+                                                {{  $recordTen[0]->fullname?? 'N/A' }}
+                                            </span> &nbsp;&nbsp;
+                                            Grade Level: <b>10</b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td rowspan="2">LEARNING AREAS</td>
+                                        <td colspan="4" class="text-center">Quarterly Rating</td>
+                                        <td rowspan="2" class="text-center">Final Rating</td>
+                                        <td rowspan="2">Remarks</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (!empty($recordTen))
+                                    @foreach ($recordTen as $item)
+                                    <tr>
+                                        <th>{{ $item->descriptive_title }}</th>
+                                        <th>{{ $item->first }}</th>
+                                        <th>{{ $item->second }}</th>
+                                        <th>{{ $item->third }}</th>
+                                        <th>{{ $item->fourth }}</th>
+                                        <th>
+                                            {{ computedGrade($item->first,$item->second,$item->third,$item->fourth,'final') }}
+                                        </th>
+                                        <th>
+                                            {{ computedGrade($item->first,$item->second,$item->third,$item->fourth,'remark') }}
+                                            @php
+                                            $ten++;
+                                            $sum10+=computedGrade($item->first,$item->second,$item->third,$item->fourth,'final')
+                                            @endphp
+                                        </th>
+                                    </tr>
+                                    @endforeach
+                                    @endif
+                                    <tr>
+                                        <th></th>
+                                        <th colspan="4" class="text-center">General Average</th>
+                                        <th>{{ $ten!=0? round($sum10/$ten):'0' }}</th>
+                                        <th colspan="1">
+                                            {{ $ten!=0? round($sum10/$ten)<75?'Failed':'Passed':'0' }}
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+@endsection
