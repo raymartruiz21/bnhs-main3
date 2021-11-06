@@ -1,13 +1,11 @@
 <form id="exportForm">@csrf
     <div class="modal fade" id="modalExport" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="modalExportLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
+        <div class="modal-dialog modal-md">
             <div class="modal-content pb-0">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalExportLabel">Export File</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body pb-0">
                     <div class="form-group">

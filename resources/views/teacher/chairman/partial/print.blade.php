@@ -14,17 +14,24 @@
     <div class="container">
         <div class="row">
             <div class="col-1 text-center">
-                <img src="{{ asset('image/logo/logo.png') }}" class="" width="120%">
+                <img src="{{ asset('image/logo/bn.jpg') }}" class="" width="120%">
             </div>
-            <div class="col-4 my-3">
-                <h6 class="mb-0">PILI NATIONAL HIGH SCHOOL</h6>
-                <small>List of student</small>
+            <div class="col-9 my-3 text-center">
+                <h6 class="mb-0">BALAOGAN NATIONAL HIGH SCHOOL</h6>
+                <P>Balaogan, Bula, Camarines Sur</P>
+                <p><b>List of student</b></p>
+            </div>
+            <div class="col-1 text-center">
+                <img src="{{ asset('image/logo/deped.png') }}" class="" width="120%">
+            </div>
+            <div class="col-1 text-center">
+                <img src="{{ asset('image/logo/dept.png') }}" class="" width="120%">
             </div>
         </div><br>
-        <p class="mb-0">Section: {{ $section }}</p>
+        <p class="mb-0">Section: <b>{{ $section }}</b></p>
         <small>Total Student: {{ $total->mtotal+$total->ftotal }}</small>&nbsp;&nbsp;
         <small>Male: {{ $total->mtotal }}</small>&nbsp;&nbsp;
-        <small>Female: {{ $total->ftotal }}</small>
+        <small>Female: {{ $total->ftotal }}</small><br>
         <table class="table table-bordered table-sm mt-2">
             <thead>
                 <tr>

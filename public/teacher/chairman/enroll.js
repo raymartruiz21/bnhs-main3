@@ -35,7 +35,7 @@ let monitorSection = (curriculum) => {
         .done(function (data) {
             data.forEach((val) => {
                 monitorHMTL += `
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <button type="button" class="btn btn-info text-white btn-icon icon-left listenrolledBtn ml-3 p-2" value='${val.section_name}'>
                             <i class="far fa-user"></i> ${val.section_name}
@@ -656,6 +656,7 @@ $("#massSectioningForm").on("submit", function (e) {
                     $("#sectionGrouping").fadeOut(1000);
                     monitorSection(current_curriculum);
                     findTableToRefresh(current_curriculum);
+                    getToast("success", "Successfully", "Enrolled");
                     tableCurriculum.ajax.reload();
                 }
             })

@@ -26,6 +26,7 @@
                                 </div>
                             </div>
                         </div>
+        
                         {{--  fail subject --}}
                         <div class="card card-info">
                             <div class="card-header pb-0 pt-0">
@@ -38,6 +39,8 @@
                             </div>
                         </div>
                     </div>
+                
+                   
                     <div class="col-lg-8 col-md-8 col-sm-12">
                         <div class="card card-info">
                             <div class="card-header pb-0 pt-0">

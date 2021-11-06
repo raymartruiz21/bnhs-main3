@@ -34,9 +34,9 @@ class ChartController extends Controller
     public function populationBySex()
     {
         $sex = Student::select(DB::raw("COUNT(if (gender='Male',1,NULL)) as Male"), DB::raw("COUNT(if (gender='Female',1,NULL)) as Female"))
-            ->orderBy('gender', 'asc')
-            ->groupBy('gender')
-            ->get();
+        ->orderBy('gender', 'asc')
+        ->groupBy('gender')
+        ->get();
         return response()->json($sex);
     }
 

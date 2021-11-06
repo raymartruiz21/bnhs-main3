@@ -71,7 +71,7 @@ let loadDataSex = () => {
         })
         .fail(function (jqxHR, textStatus, errorThrown) {
             console.log(jqxHR, textStatus, errorThrown);
-            getToast("error", "Eror", errorThrown);
+            getToast("error", "Error", errorThrown);
         });
 };
 loadDataSex();
