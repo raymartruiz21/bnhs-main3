@@ -70,65 +70,65 @@ $("select[name='term']").on("change", function () {
 
 ///////////////////////////////////////////////////////////////
 
-// for assign table
-let tableAssign = (term) => {
-    let hold = "";
-    $.ajax({
-        url: "assign/list/subject/section/" + term,
-        type: "GET",
-        dataType: "json",
-        beforeSend: function () {
-            $("#tableAssign").html(
-                `<tr>
-                        <td colspan="5" class="text-center">
-                            <div class="spinner-border spinner-border-sm" role="status">
-                                <span class="sr-only">Loading...</span>
-                            </div>
-                        </td>
-                    </tr>
-                    `
-            );
-        },
-    })
-        .done(function (data) {
-            let i = 1;
-            if (data.length == 0) {
-                hold = `<tr>
-                <td colspan="5" class="text-center">
-                   No Data Available
-                </td>
-            </tr>`;
-            } else {
-                data.forEach((val) => {
-                    hold += `
-                    <tr>
-                    <td>${i++}</td>
-                    <td>${val.descriptive_title}</td>
-                        <td>${val.teacher_name}</td>
-                        <td>
-                            <button type="button" class="btn btn-sm btn-warning sdelete deleteAssign btnDelete_${
-                                val.id
-                            }  pt-2 pb-2 pl-2 pr-2" id="${val.id}">
-                            <i class="fas fa-user-times"></i>
-                            </button>
-                            &nbsp;&nbsp;
-                            <button type="button" class="btn btn-sm btn-info editAssign  editA_${
-                                val.id
-                            } pt-2 pb-2 pl-2 pr-2" id="${val.id}">
-                            <i class="fas fa-edit"></i>
-                            </button>
-                        </td>
-                    </tr>
-                `;
-                });
-            }
-            $("#tableAssign").html(hold);
-        })
-        .fail(function (jqxHR, textStatus, errorThrown) {
-            console.log(jqxHR, textStatus, errorThrown);
-            getToast("error", "Error", errorThrown);
-        });
-};
+// for assign subject teacher table
+// let tableAssign = (term) => {
+//     let hold = "";
+//     $.ajax({
+//         url: "assign/list/subject/section/" + term,
+//         type: "GET",
+//         dataType: "json",
+//         beforeSend: function () {
+//             $("#tableAssign").html(
+//                 `<tr>
+//                         <td colspan="5" class="text-center">
+//                             <div class="spinner-border spinner-border-sm" role="status">
+//                                 <span class="sr-only">Loading...</span>
+//                             </div>
+//                         </td>
+//                     </tr>
+//                     `
+//             );
+//         },
+//     })
+//         .done(function (data) {
+//             let i = 1;
+//             if (data.length == 0) {
+//                 hold = `<tr>
+//                 <td colspan="5" class="text-center">
+//                    No Data Available
+//                 </td>
+//             </tr>`;
+//             } else {
+//                 data.forEach((val) => {
+//                     hold += `
+//                     <tr>
+//                     <td>${i++}</td>
+//                     <td>${val.descriptive_title}</td>
+//                         <td>${val.teacher_name}</td>
+//                         <td>
+//                             <button type="button" class="btn btn-sm btn-warning sdelete deleteAssign btnDelete_${
+//                                 val.id
+//                             }  pt-2 pb-2 pl-2 pr-2" id="${val.id}">
+//                             <i class="fas fa-user-times"></i>
+//                             </button>
+//                             &nbsp;&nbsp;
+//                             <button type="button" class="btn btn-sm btn-info editAssign  editA_${
+//                                 val.id
+//                             } pt-2 pb-2 pl-2 pr-2" id="${val.id}">
+//                             <i class="fas fa-edit"></i>
+//                             </button>
+//                         </td>
+//                     </tr>
+//                 `;
+//                 });
+//             }
+//             $("#tableAssign").html(hold);
+//         })
+//         .fail(function (jqxHR, textStatus, errorThrown) {
+//             console.log(jqxHR, textStatus, errorThrown);
+//             getToast("error", "Error", errorThrown);
+//         });
+// };
 
 tableAssign($('select[name="term"]').val());
 

@@ -17,11 +17,30 @@
                     <div class="col-lg-5 col-md-8">
                         <p style="font-size: 25px;"><i class="fas fa-id-badge text-dark"></i>&nbsp;&nbsp;Student Masterlist</p>
                     </div>
-                    <div class="col-lg-2 col-md-2" style="text-align: right">
+                    <div class="col-lg-4 col-md-2" style="text-align: right">
                         <!-- Button trigger modal -->
                         <button class="btn float-right btn-primary my-4"  id="btnStudentModal" data-coreui-toggle="modal" data-coreui-target="#staticBackdrop">
                             <i class="fas fa-plus-circle"></i>&nbsp;Add Student
                         </button>
+
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01">Filter</label>
+                            <select class="form-select" id="inputGroupSelect01"  name="school_year_id">
+                                {{-- @foreach ($yearList as $item)
+                                    <option value="{{ $item->id }}" {{ $item->status=='1'?'selected':'' }}>{{ $item->from.'-'.$item->to }}</option>
+                                @endforeach --}}
+                            </select>
+                            <select class="form-select" id="inputGroupSelect01"  name="selectedGL">
+                                <option value="all">All</option>
+                                <option value="7">Grade 7</option>
+                                <option value="8">Grade 8</option>
+                                <option value="9">Grade 9</option>
+                                <option value="10">Grade 10</option>
+                                <option value="11">Grade 11</option>
+                                <option value="12">Grade 12</option>
+                            </select>
+                            <button class="btn btn-info text-white" id="button-addon2" name="btnExport" type="button">Export Enrollee</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -37,6 +56,8 @@
                                         <th>Fullname</th>
                                         <th>Gender</th>
                                         <th>Contact No.</th>
+                                        <th>Curriculum | Strand</th>
+                                        <th>Section</th>
                                         <th>Username</th>
                                         {{-- <th>Password</th> --}}
                                         <th width="10%">Action</th>

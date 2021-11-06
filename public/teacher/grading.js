@@ -135,8 +135,8 @@ let myClassTable = (section_id, subject_id) => {
                               data.fourth == null
                                 ? ""
                                 : myAverage >= 75
-                                ? `<span class="ml-3 badge badge-success">Passed</span>`
-                                : `<span class="ml-3 badge badge-danger ">Failed</span>`
+                                ? `<span class="ml-3 badge bg-success">Passed</span>`
+                                : `<span class="ml-3 badge bg-danger ">Failed</span>`
                             : ""
                     }`;
                 },

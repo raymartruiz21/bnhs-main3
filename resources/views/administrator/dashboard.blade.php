@@ -10,7 +10,7 @@
     <div class="body flex-grow-1 px-3">
         <div class="container-fluid ">
             <div class="row" style="margin-top: -10px;">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="callout callout-info border-top-0 border-bottom-0 border-end-0 elevation-2 bg-white dark:bg-dark">
                         <div class="callout-icon  ">
                             <i class="far fa-user" style="font-size: 20px"></i>
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="callout callout-info border-top-0 border-bottom-0 border-end-0 elevation-2 bg-white dark:bg-dark">
                         <div class="callout-icon">
                             <i class="far fa-user" style="font-size: 20px"></i>
@@ -39,8 +39,8 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="callout callout-info border-top-0 border-bottom-0 border-end-0 elevation-2 bg-white dark:bg-dark">
                         <div class="callout-icon">
                             <i class="fas fa-users" style="font-size:20px"></i>
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="callout callout-info border-top-0 border-bottom-0 border-end-0 elevation-2 bg-white dark:bg-dark">
                         <div class="callout-icon">
                             <i class="fas fa-copy"></i>
@@ -94,7 +94,7 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="col-md-12 col-lg-12 col-12 col-sm-12">
+                        <div class="col-md-12 col-lg-12 col-12 col-sm-12 mb-3">
                             <div class="card">
                                 <div class="card-header">
                                     <h6>Population by Grade Level</h6>
@@ -103,12 +103,12 @@
                                     <canvas id="myChart2"></canvas>
                                 </div>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
     
                 <div class="col-lg-4 col-md-12 col-12 col-sm-12">
-                    {{-- <div class="card">
+                    {{-- <div class="card mb-3">
                         <div class="card-header">
                             <h4>Appointment Today</h4>
                         </div>
@@ -140,26 +140,22 @@
                         <div class="card-body pb-0">
                             <ul class="list-unstyled list-unstyled-border">
                                 <li class="media mb-3">
-                                    <a href="#">
                                         <!-- <img class=" width=" 50" src="{{ asset('image/avatar-1.png') }}" alt="product">
                                         -->
-                                        <i class="mr-3 rounded fas fa-users" style="font-size: 20px"></i>
-                                    </a>
+                                    <i class="mr-3 rounded text-info fas fa-users" style="font-size: 20px"></i>
                                     <div class="media-body">
-                                        <div class="media-right my-2" style="font-size: 20px">{{ $njhs }}</div>
+                                        <div class="media-right my-2" style="font-size: 20px"><b>{{ $njhs }}</b></div>
                                         <div class="media-title">Number of Junior High</div>
-                                        <div class="text-muted text-small">Grade 7 to 10
+                                        <div class="text-dark text-small">Grade 7 to 10
                                         </div>
                                     </div>
-                                </li>
+                                </li><hr class="text-dark">
                                 <li class="media">
-                                    <a href="#">
-                                        <i class="mr-3 rounded fas fa-user-shield" style="font-size: 20px"></i>
-                                    </a>
+                                    <i class="mr-3 rounded text-info fas fa-user-shield" style="font-size: 20px"></i>
                                     <div class="media-body">
-                                        <div class="media-right my-2" style="font-size: 20px">{{ $nshs }}</div>
+                                        <div class="media-right my-2" style="font-size: 20px"><b>{{ $nshs }}</b></div>
                                         <div class="media-title">Number of Senior High</div>
-                                        <div class="text-muted text-small">Grade 11 to 12
+                                        <div class="text-dark text-small">Grade 11 to 12
                                         </div>
                                     </div>
                                 </li>

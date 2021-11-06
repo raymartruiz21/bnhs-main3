@@ -1,7 +1,7 @@
 <div class="card card-info mt-4 shadow">
     <div class="card-body pb-2">
         <div class="table-responsive">
-            <table class="table table-striped" id="tableStudent" style="font-size: 11px">
+            <table class="table table-striped" id="tableStudent" style="font-size: 13px">
                 <thead>
                     <tr>
                         <th width="40%">LRN</th>

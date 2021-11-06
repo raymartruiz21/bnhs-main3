@@ -34,16 +34,13 @@
         <div class="col-12">
             <div class="row justify-content-between">
                 <div class="col-lg-5 col-md-8">
-                    <h2 class="section-title">Grading</h2>
+                    <p style="font-size: 25px;">Grading [ <span style="font-size: 15px" class="txtSubjectName badge bg-warning pt-1 pb-1 mt-2"></span> ]</p>
                 </div>
                 <div class="col-lg-2 col-md-2 my-4">
                     <div class="float-right ">
-
                         <form class="form-inline ">
-                            <select name="filterMyLoadSection" class="custom-select my-1 mr-sm-2" id="filterLabel">
-                            </select>
+                            <select name="filterMyLoadSection" class="custom-select my-1 mr-sm-2" id="filterLabel"></select>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -52,17 +49,16 @@
         <div class="card card-info">
             <div class="card-body pb-1">
                 <div class="table-responsive">
-                    <div class="float-left">
-                        <span style="font-size: 15px" class="txtSubjectName badge badge-warning pt-1 pb-1 mt-2"></span>
-                    </div>
-                    <div class="col-lg-1 float-left">
-                        <button type="button" class="btn btn-outline-primary btn-block" id="btnImport"><i
-                                class="fas fa-cloud-upload-alt"></i>&nbsp;Import
-                        </button>
-                    </div>
-                    <div class="col-lg-1 float-left">
-                        <button class="btn btn-outline-secondary btnDownload" type="button"><i
-                            class="fas fa-cloud-download-alt"></i>Template</button>
+                    <div class="row">
+                        <div class="col-lg-1 float-left">
+                            <button type="button" class="btn btn-outline-primary btn-block" id="btnImport"><i
+                                    class="fas fa-cloud-upload-alt"></i>&nbsp;Import
+                            </button>
+                        </div>
+                        <div class="col-lg-1 float-left">
+                            <button class="btn btn-outline-secondary btnDownload" type="button"><i
+                                class="fas fa-cloud-download-alt"></i>Template</button>
+                        </div>
                     </div>
                     <table class="table  table-bordered table-hover" id="myClassTable" style="font-size: 14px">
                         <thead class="bg-info ">

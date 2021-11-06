@@ -58,6 +58,9 @@
                     </tr>
                 </thead>
                 <tbody id="tableAssign">
+                    <tr>
+                        <td colspan="4" class="text-center">No available data</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

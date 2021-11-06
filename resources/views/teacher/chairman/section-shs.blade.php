@@ -14,7 +14,7 @@
                     <div class="card card-info">
                         <div class="card-body pb-1">
                             <div class="table-responsive">
-                                <table class="table table-striped" style="font-size: 11px">
+                                <table class="table table-striped" style="font-size: 13px">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -36,7 +36,7 @@
                 </div><!-- col-lg-8 -->
                 <div class="col-lg-4 col-md-4 col-sm-12">
                     <div class="card card-info">
-                        <div class="card-header">Add Senior High Class</div>
+                        <div class="card-header">Add Senior High Section and Adviser</div>
                         <div class="card-body m-1">
                             <form id="sectionForm" autocomplete="off">@csrf
                                 <input type="hidden" name="id">

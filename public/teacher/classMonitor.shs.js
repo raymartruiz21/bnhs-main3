@@ -19,8 +19,8 @@ let myClassTable = $("#myClassTable").DataTable({
             data: null,
             render: function (data) {
                 return data.enroll_status == "Dropped"
-                    ? `<span class="badge badge-danger">${data.enroll_status}</span>`
-                    : `<span class="badge badge-success">${data.enroll_status}</span>`;
+                    ? `<span class="badge bg-danger">${data.enroll_status}</span>`
+                    : `<span class="badge bg-success">${data.enroll_status}</span>`;
             },
         },
         {

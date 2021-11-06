@@ -12,25 +12,27 @@
                         <form id="studentForm">@csrf
                             <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                             <div class="card-body">
-                                <div class="form-group mb-3">
-                                    <label for="exampleInputEmail1" class="mb-2">Employee ID</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1"
-                                        value="{{ auth()->user()->roll_no }}">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="exampleInputEmail1" class="mb-2">First name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1"
-                                        value="{{ auth()->user()->teacher_firstname }}">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="exampleInputEmail1" class="mb-2">Middle name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1"
-                                        value="{{ auth()->user()->teacher_middlename }}">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label for="exampleInputEmail1" class="mb-2">Last name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1"
-                                        value="{{ auth()->user()->teacher_lastname }}">
+                                <div class="row">
+                                    <div class="col-6 form-group mb-3">
+                                        <label for="exampleInputEmail1" class="mb-2">Employee ID</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            value="{{ auth()->user()->roll_no }}">
+                                    </div>
+                                    <div class="col-6 form-group mb-3">
+                                        <label for="exampleInputEmail1" class="mb-2">First name</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            value="{{ auth()->user()->teacher_firstname }}">
+                                    </div>
+                                    <div class="col-6 form-group mb-3">
+                                        <label for="exampleInputEmail1" class="mb-2">Middle name</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            value="{{ auth()->user()->teacher_middlename }}">
+                                    </div>
+                                    <div class="col-6 form-group mb-3">
+                                        <label for="exampleInputEmail1" class="mb-2">Last name</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            value="{{ auth()->user()->teacher_lastname }}">
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary" disabled>Update Profile</button>
                             </div>

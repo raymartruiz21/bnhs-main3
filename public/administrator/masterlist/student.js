@@ -27,6 +27,8 @@ const studentTable = $("#studentTable").DataTable({
         { data: "gender" },
         { data: "student_contact" },
         { data: "username" },
+        { data: "username" },
+        { data: "username" },
         // { data: "orig_password" },
         {
             data: null,
@@ -101,9 +103,9 @@ $("#studentForm").submit(function (e) {
     })
         .done(function (response) {
             $("#btnSaveStudent").html("Save").attr("disabled", false);
-            getToast("success", "Success", "Successfully save student");
             $("#studentForm")[0].reset();
-            getToast("success", "Successfully", "added new Student");
+            // getToast("success", "Successfully", "added new Student");
+            getToast("success", "Success", "Successfully save student");
             studentTable.ajax.reload();
         })
         .fail(function (jqxHR, textStatus, errorThrown) {
@@ -226,4 +228,18 @@ $(document).on("click", ".sedit", function () {
                 .attr("disabled", false);
             getToast("error", "Eror", errorThrown);
         });
+});
+
+// 
+enrollmentTable("all",$("select[name='school_year_id']").val());
+$("select[name='selectedGL']").on("change", function () {
+    enrollmentTable($(this).val(),$("select[name='school_year_id']").val());
+});
+
+$("select[name='school_year_id']").on("change", function () {
+    enrollmentTable($("select[name='selectedGL']").val(),$(this).val());
+});
+
+$("button[name='btnExport']").on('click', function () {
+    window.open("enrollment/export/by/level")
 });

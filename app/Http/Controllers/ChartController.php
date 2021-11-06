@@ -30,14 +30,18 @@ class ChartController extends Controller
         }
     }
 
-
     public function populationBySex()
     {
-        $sex = Student::select(DB::raw("COUNT(if (gender='Male',1,NULL)) as Male"), DB::raw("COUNT(if (gender='Female',1,NULL)) as Female"))
-        ->orderBy('gender', 'asc')
-        ->groupBy('gender')
-        ->get();
-        return response()->json($sex);
+        // $sex = Student::select(DB::raw("COUNT(if (gender='Male',1,NULL)) as Male"), DB::raw("COUNT(if (gender='Female',1,NULL)) as Female"))
+        //     ->orderBy('gender', 'asc')
+        //     ->groupBy('gender')
+        //     ->get();
+        // return response()->json($sex);
+        $array = array();
+        $Male = Student::select(DB::raw("COUNT(if (gender='Male',1,NULL)) as Male"))->pluck('Male');
+        $Female = Student::select(DB::raw("COUNT(if (gender='Female',1,NULL)) as Female"))->pluck('Female');
+        array_push($array, ['Male' => $Male[0], 'Female' => $Female[0]]);
+        return response()->json($array);
     }
 
     public function populationByCurriculum()

@@ -116,6 +116,8 @@ Route::middleware(['auth:web', 'preventBackHistory'])->name('admin.')->prefix('a
     Route::delete('student/delete/{student}', [StudentController::class, 'destroy']);
     Route::get('student/edit/{student}', [StudentController::class, 'edit']);
     Route::get('student/view/record/{student}', [StudentController::class, 'viewRecord']);
+    // export student
+    Route::get('student/export', [ExportController::class, 'exportMasterList']);
 
     // archive
     Route::get('archive', [AdminController::class, 'archive'])->name('archive');

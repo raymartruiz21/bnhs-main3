@@ -13,12 +13,12 @@
                     <div class="row">
                         @if (Auth::user()->chairman->grade_level==7)
                         <div class="form-group col-lg-6 mb-3">
-                            <label>LRN (Learning Reference Number)</label>
+                            <label class="mb-2">LRN (Learning Reference Number)</label>
                             <input type="text" class="form-control" name="roll_no" pattern="^[0-9]{12}$"
                                 onkeypress="return numberOnly(event)" maxlength="12" required>
                         </div>
                         <div class="form-group col-lg-6 mb-3">
-                            <label>Status</label>
+                            <label class="mb-2">Status</label>
                             <select name="status" class="form-control" required>
                                 <option value="nothing"></option>
                                 <option value="new">Incomming grade 7</option>
@@ -27,7 +27,7 @@
                         </div>
                         @else
                         <div class="form-group col-lg-6 mb-3">
-                            <label>Status</label>
+                            <label class="mb-2">Status</label>
                             <select name="status" class="form-control" required>
                                 <option value="nothing"></option>
                                 <option value="upperclass">Upper Class</option>
@@ -35,14 +35,14 @@
                             </select>
                         </div>
                         <div class="form-group col-lg-6 mb-3">
-                            <label>LRN (Learning Reference Number)</label>
+                            <label class="mb-2">LRN (Learning Reference Number)</label>
                             <input type="text" class="form-control" name="roll_no" pattern="^[0-9]{12}$"
                                 onkeypress="return numberOnly(event)" maxlength="12" required>
                         </div>
                         @endif
 
                         <div class="form-group col-lg-6 mb-3">
-                            <label>Grade level to Enroll</label>
+                            <label class="mb-2">Grade level to Enroll</label>
                             <select name="grade_level" class="form-control" id="" required>
                                 <option></option>
                                 <option value="7">Grade 7</option>
@@ -52,7 +52,7 @@
                             </select>
                         </div>
                         <div class="form-group col-lg-6 mb-3">
-                            <label>Curriculum</label>
+                            <label class="mb-2">Curriculum</label>
                             <select name="curriculum" class="form-control" required>
                                 <option value=""></option>
                                 {{-- <option value="STEM">STEM - Science Technology Engineering and Mathematics</option> --}}
@@ -63,63 +63,63 @@
                         </div>
                     </div>
                     <div class="form-group mb-3" id="last_school">
-                        <label>Last school attended</label>
+                        <label class="mb-2">Last school attended</label>
                         <input type="text" class="form-control" name="last_school_attended" required>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-4 mb-3">
-                            <label>First name</label>
+                            <label class="mb-2">First name</label>
                             <input type="text" class="form-control" name="student_firstname" required>
                         </div>
                         <div class="form-group col-lg-4 mb-3">
-                            <label>Middle name</label>
+                            <label class="mb-2">Middle name</label>
                             <input type="text" class="form-control" name="student_middlename">
                         </div>
                         <div class="form-group col-lg-4 mb-3">
-                            <label>Last name</label>
+                            <label class="mb-2">Last name</label>
                             <input type="text" class="form-control" name="student_lastname" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-3 mb-3">
-                            <label>Date of Birth</label>
+                            <label class="mb-2">Date of Birth</label>
                             <input type="date" class="form-control" required name="date_of_birth">
                         </div>
                         <div class="form-group col-lg-3 mb-3">
-                            <label>Gender</label>
+                            <label class="mb-2">Gender</label>
                             <select name="gender" class="form-control">
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
                         <div class="form-group col-lg-3 mb-3">
-                            <label>Contact No.</label>
+                            <label class="mb-2">Contact No.</label>
                             <input type="text" class="form-control" name="student_contact" pattern="^[0-9]{11}$"
                                 onkeypress="return numberOnly(event)" maxlength="11" required>
                         </div>
                         <div class="form-group col-lg-3 mb-3">
-                            <label>Section</label>
+                            <label class="mb-2">Section</label>
                             <select name="section_id" class="form-control">
                             </select>
                         </div>
                     </div>
                     <div class="row" id="notUpper">
                         <div class="form-group col-lg-3 mb-3">
-                            <label>Region</label>
+                            <label class="mb-2">Region</label>
                             <select name="region_text" id="region" class="form-select">
                                 {{-- <option value="region"></option> --}}
                             </select>
                             <input type="hidden" name="region">
                         </div>
                         <div class="form-group col-lg-3 mb-3">
-                            <label>Province</label>
+                            <label class="mb-2">Province</label>
                             <select name="province_text" id="province" class="form-select">
                                 {{-- <option value="province"></option> --}}
                             </select>
                             <input type="hidden" name="province">
                         </div>
                         <div class="form-group col-lg-3 mb-3">
-                            <label>Town</label>
+                            <label class="mb-2">Town</label>
                             <select name="city_text" id="city" class="form-select">
                                 {{-- <option value="city"></option> --}}
 
@@ -127,7 +127,7 @@
                             </select>
                         </div>
                         <div class="form-group col-lg-3 mb-3">
-                            <label>Barangay</label>
+                            <label class="mb-2">Barangay</label>
                             <select name="barangay_text" id="barangay" class="form-select">
                                 {{-- <option value="barangay"></option> --}}
                             </select>
@@ -135,12 +135,12 @@
                         </div>
                     </div>
                     <div class="form-group mb-3" id="forUpper">
-                        <label>Address</label>
+                        <label class="mb-2">Address</label>
                         <input type="text" class="form-control" name="address">
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-8 mb-3">
-                            <label>Father's name</label>
+                            <label class="mb-2">Father's name</label>
                             <input type="text" class="form-control" name="father_name">
                         </div>
                         <div class="form-group col-lg-4">
@@ -151,7 +151,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-8 mb-3">
-                            <label>Mother's name</label>
+                            <label class="mb-2">Mother's name</label>
                             <input type="text" class="form-control" name="mother_name">
                         </div>
                         <div class="form-group col-lg-4 mb-3">
@@ -162,11 +162,11 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-8 mb-3">
-                            <label>Guardian's name</label>
+                            <label class="mb-2">Guardian's name</label>
                             <input type="text" class="form-control" name="guardian_name">
                         </div>
                         <div class="form-group col-lg-4 mb-3">
-                            <label>Contact No.</label>
+                            <label class="mb-2">Contact No.</label>
                             <input type="text" class="form-control" name="guardian_contact_no" pattern="^[0-9]{11}$"
                                 onkeypress="return numberOnly(event)" maxlength="11">
                         </div>

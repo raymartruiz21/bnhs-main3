@@ -22,19 +22,19 @@ class EnrollmentExport implements FromCollection, ShouldAutoSize, WithMapping, W
     public function collection()
     {
         if ($this->status == 'All') {
-            $data = Enrollment::select('students.student_contact', 'students.mother_contact_no', 'students.father_contact_no', 'students.guardian_contact_no', DB::raw("CONCAT(student_lastname,', ',student_firstname,' ', student_middlename) AS fullname"))
+            $data = Enrollment::select('students.roll_no', 'enrollments.curriculum', 'enrollments.state', 'enrollments.enroll_status', 'students.student_contact', 'students.mother_contact_no', 'students.father_contact_no', 'students.guardian_contact_no', DB::raw("CONCAT(student_lastname,', ',student_firstname,' ', student_middlename) AS fullname"))
                 ->join('students', 'enrollments.student_id', 'students.id')
                 ->where('enrollments.grade_level', $this->grade_level)
                 ->where('enrollments.school_year_id', Config::get('activeAY')->id)
-                ->where('students.curriculum', strtoupper($this->curriculum))
+                ->where('enrollments.curriculum', strtoupper($this->curriculum))
                 ->get();
         } else {
-            $data = Enrollment::select('students.student_contact', 'students.mother_contact_no', 'students.father_contact_no', 'students.guardian_contact_no', DB::raw("CONCAT(student_lastname,', ',student_firstname,' ', student_middlename) AS fullname"))
+            $data = Enrollment::select('students.roll_no', 'enrollments.curriculum', 'enrollments.state', 'students.student_contact', 'enrollments.enroll_status', 'students.mother_contact_no', 'students.father_contact_no', 'students.guardian_contact_no', DB::raw("CONCAT(student_lastname,', ',student_firstname,' ', student_middlename) AS fullname"))
                 ->join('students', 'enrollments.student_id', 'students.id')
                 ->where('enrollments.enroll_status', $this->status)
                 ->where('enrollments.grade_level', $this->grade_level)
                 ->where('enrollments.school_year_id', Config::get('activeAY')->id)
-                ->where('students.curriculum', strtoupper($this->curriculum))
+                ->where('enrollments.curriculum', strtoupper($this->curriculum))
                 ->get();
         }
         return $data;
@@ -43,7 +43,11 @@ class EnrollmentExport implements FromCollection, ShouldAutoSize, WithMapping, W
     public function map($data): array
     {
         return [
+            $data->roll_no,
             $data->fullname,
+            $data->state,
+            $data->curriculum,
+            $data->enroll_status,
             $data->student_contact,
             $data->mother_contact_no,
             $data->father_contact_no,
@@ -54,7 +58,11 @@ class EnrollmentExport implements FromCollection, ShouldAutoSize, WithMapping, W
     public function headings(): array
     {
         return [
+            'LRN',
             'STUDENT NAME',
+            'STATE',
+            'CURRICULUM',
+            'STATUS',
             'STUDENT CONTACT NO',
             'MOTHER CONTACT NO',
             'FATHER CONTACT NO',

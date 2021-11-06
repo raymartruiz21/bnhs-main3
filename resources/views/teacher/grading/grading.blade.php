@@ -36,9 +36,9 @@
             <div class="callout callout-info border-top-0 border-bottom-0 border-end-0 elevation-2 bg-white dark:bg-dark" style="margin-top: -10px;">
                 <div class="row justify-content-between">
                     <div class="col-lg-5 col-md-8">
-                        <p style="font-size: 25px;"><i class="fas fa-pen"></i>&nbsp;&nbsp;Grading</p>
+                        <p style="font-size: 25px;"><i class="fas fa-pen"></i>&nbsp;&nbsp;Grading [ <span style="font-size: 15px" class="txtSubjectName badge bg-warning pt-1 pb-1 mt-2"></span> ]</p>
                         <div class="float-left">
-                            <span style="font-size: 15px" class="txtSubjectName badge bg-warning pt-1 pb-1 mt-2"></span>
+                            
                         </div>
                         <div class="col-lg-4 float-left">
                             <div class="btn-group" role="group" aria-label="Basic example">

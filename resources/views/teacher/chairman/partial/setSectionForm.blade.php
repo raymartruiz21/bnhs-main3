@@ -1,9 +1,10 @@
 <form id="setSectionForm">@csrf
     <div class="modal fade" id="setSectionModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-top modal-sm">
+        <div class="modal-dialog  modal-dialog-top modal-md">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5>Assign Section</h5>
+                    <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body pb-0">
                     <div class="alert alert-warning text-center" role="alert"></div>

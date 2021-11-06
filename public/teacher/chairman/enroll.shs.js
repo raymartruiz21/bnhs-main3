@@ -312,14 +312,18 @@ let monitorSection = (strand, term) => {
         .done(function (data) {
             data.forEach((val) => {
                 monitorHMTL += `
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-info btn-icon icon-left listenrolledBtn ml-3 p-2" value='${val.section_name}'>
-                        <i class="far fa-user"></i> ${val.section_name}
-                        <span class="btnSection_${val.section_name}">
-                        <span class="badge badge-transparent ">${val.total}</span>
-                        </span>
-                    </button>
-                    <button type="button" class="btn btn-info border-left p-2 pl-3 pr-3 printBtn" value='${val.section_name}_${term}'><i class="fa fa-print" style="font-size:15px"></i></button>
+                <div class="row">
+                    <div class="col-md-2 col-12">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-info btn-icon icon-left listenrolledBtn ml-3 p-2" value='${val.section_name}'>
+                                <i class="far fa-user text-white"></i>&nbsp;&nbsp;<span class="text-white">${val.section_name}</span>
+                                <span class="btnSection_${val.section_name}">
+                                <span class="badge bg-transparent ">${val.total}</span>
+                                </span>
+                            </button>
+                            <button type="button" class="btn btn-info border-left p-2 pl-3 pr-3 printBtn" value='${val.section_name}_${term}'><i class="fa fa-print text-white" style="font-size:15px"></i></button>
+                        </div>
+                    </div>
                 </div>
                `;
             });

@@ -63,7 +63,6 @@
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive">
-                        {{-- table-responsive--}}
                         <table class="table table-striped" id="enrollmentTable" style="font-size: 13px">
                             <thead>
                                 <tr>

@@ -16,6 +16,9 @@ let loadTableSubject = (student, term) => {
                                 ${++i}
                                 </td>
                                 <td class="pt-0 pb-0">
+                                hello
+                                </td>
+                                <td class="pt-0 pb-0">
                                 ${val.descriptive_title}
                                 </td>
                                 <td class="pt-0 pb-0">

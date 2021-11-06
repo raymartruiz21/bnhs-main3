@@ -15,34 +15,37 @@
                     <div class="row sectionListAvailable mb-3"></div>
                     <div class="card card-info">
                         <div class="card-body">
-                            <div class="col-lg-8 col-md-8 col-sm-12">
-                                <form id="assignForm">@csrf
-                                    <input type="hidden" name="id">
-                                    <div class="row mb-3">
-                                        <div class="col-mb-2">
-                                            <div class="input-group">
-                                                <select class="form-select" aria-label="Default select example" name="subject_id">
-                                                    <option value="">Choose subject</option>
-                                                    @foreach ($subjects as $item)
-                                                    <option value="{{ $item->id }}">[ {{ $item->subject_code }} ] -
-                                                        {{ $item->descriptive_title }}</option>
-                                                    @endforeach
-                                                </select>
-                                                <select class="form-select" aria-label="Default select example" name="teacher_id">
-                                                    <option value="">Choose subject teacher</option>
-                                                    @foreach ($teachers as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->teacher_name }}</option>
-                                                    @endforeach
-                                                </select>
-                                                <button class="btn btn-primary pl-4 pr-4 assignBtn rounded" type="submit">Save</button>
-                                                <button class="btn btn-warning pl-4 pr-4 cancelNow rounded" type="submit">Cancel</button>
+                            <div class="row">
+                                <div class="col-lg-5 col-md-5 col-sm-12 mb-3">
+                                    <form id="assignForm">@csrf
+                                        <input type="hidden" name="id">
+                                        <div class="row mb-3">
+                                            <div class="col-mb-2">
+                                                <div class="input-group">
+                                                    <span class="input-group-text" id="basic-addon1">Assign Subject Teacher</span>
+                                                    <select class="form-select" aria-label="Default select example" name="subject_id">
+                                                        <option value="">Choose subject</option>
+                                                        @foreach ($subjects as $item)
+                                                        <option value="{{ $item->id }}">[ {{ $item->subject_code }} ] -
+                                                            {{ $item->descriptive_title }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <select class="form-select" aria-label="Default select example" name="teacher_id">
+                                                        <option value="">Choose subject teacher</option>
+                                                        @foreach ($teachers as $item)
+                                                        <option value="{{ $item->id }}">{{ $item->teacher_name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    <button class="btn btn-primary pl-4 pr-4 assignBtn rounded" type="submit">Save</button>
+                                                    <button class="btn btn-warning pl-4 pr-4 cancelNow rounded" type="submit">Cancel</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <input type="hidden" name="section_id" value="{{  Auth::user()->section_info->id }}">
-                                    <input type="hidden" name="grade_level"
-                                        value="{{  Auth::user()->section_info->grade_level }}">
-                                </form>
+                                        <input type="hidden" name="section_id" value="{{  Auth::user()->section_info->id }}">
+                                        <input type="hidden" name="grade_level"
+                                            value="{{  Auth::user()->section_info->grade_level }}">
+                                    </form>
+                                </div>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-striped">

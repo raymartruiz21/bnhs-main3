@@ -29,7 +29,7 @@
                                     @endif
                                     <hr>
                                     <h4 class="lead ">{{ $item->section_name }}</h4>
-                                    <button class="btn btn-info text-white btn-block"><i class="fas fa-eye"></i> View Student</button>
+                                    <a href="{{ route('teacher.grading') }}" class="btn btn-info text-white btn-block"><i class="fas fa-eye"></i> View Student</a>
                                 </div>
                             </div>
                         </div>

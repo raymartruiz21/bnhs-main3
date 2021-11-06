@@ -43,11 +43,11 @@
                         <div class="card-body">
     
                             {{-- <div class="table-responsive"> --}}
-                            <form id="massSectioningForm">
+                            <form id="massSectioningForm" method="POST">
                                 @include('teacher/chairman/partial/massSection')
-                                <div class="col-lg-2 float-left mb-3">
+                                {{-- <div class="col-lg-2 float-left mb-3">
                                     <select class="form-select mr-sm-2" name="selectBarangay"></select>
-                                </div>
+                                </div> --}}
                                 <table class="table table-striped" style="font-size: 13px;" id="tableCurriculum">
                                     <thead>
                                         <tr>

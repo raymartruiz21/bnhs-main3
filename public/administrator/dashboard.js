@@ -37,14 +37,14 @@ let loadData = () => {
 };
 loadData();
 
-let populationBySex = (data1,data2) => {
+let populationBySex = (data) => {
     var ctx = document.getElementById("myChart4").getContext("2d");
     var myChart = new Chart(ctx, {
         type: "pie",
         data: {
             datasets: [
                 {
-                    data: [data2.Male, data1.Female],
+                    data: [data.Male, data.Female],
                     backgroundColor: ["#008ae6", "#ff5050"],
                     label: "Dataset 1",
                 },
@@ -54,7 +54,7 @@ let populationBySex = (data1,data2) => {
         options: {
             responsive: true,
             legend: {
-                position: "bottom",
+                position: "top",
             },
         },
     });
@@ -67,14 +67,52 @@ let loadDataSex = () => {
         dataType: "json",
     })
         .done(function (data) {
-            populationBySex(data[0],data[1]);
+            populationBySex(data[0]);
         })
         .fail(function (jqxHR, textStatus, errorThrown) {
             console.log(jqxHR, textStatus, errorThrown);
-            getToast("error", "Error", errorThrown);
+            getToast("error", "Eror", errorThrown);
         });
 };
 loadDataSex();
+// let populationBySex = (data1,data2) => {
+//     var ctx = document.getElementById("myChart4").getContext("2d");
+//     var myChart = new Chart(ctx, {
+//         type: "pie",
+//         data: {
+//             datasets: [
+//                 {
+//                     data: [data2.Male, data1.Female],
+//                     backgroundColor: ["#008ae6", "#ff5050"],
+//                     label: "Dataset 1",
+//                 },
+//             ],
+//             labels: ["Male", "Female"],
+//         },
+//         options: {
+//             responsive: true,
+//             legend: {
+//                 position: "bottom",
+//             },
+//         },
+//     });
+// };
+
+// let loadDataSex = () => {
+//     $.ajax({
+//         url: "chart/population/by/sex",
+//         type: "GET",
+//         dataType: "json",
+//     })
+//         .done(function (data) {
+//             populationBySex(data[0],data[1]);
+//         })
+//         .fail(function (jqxHR, textStatus, errorThrown) {
+//             console.log(jqxHR, textStatus, errorThrown);
+//             getToast("error", "Eror", errorThrown);
+//         });
+// };
+// loadDataSex();
 
 let populationByCurriculum = (data) => {
     var cbc = document.getElementById("myChart3").getContext("2d");

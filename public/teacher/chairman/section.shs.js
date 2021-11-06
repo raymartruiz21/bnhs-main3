@@ -31,7 +31,7 @@ const sectionTable = () => {
                                 ${val.section_name}
                             </td>
                             <td>
-                                ${val.strand.strand}
+                                ${val.strand}
                             </td>
                             <td>
                                 ${val.teacher.teacher_lastname},
@@ -40,14 +40,14 @@ const sectionTable = () => {
                             </td>
                             <td>
                                 <div class="btn-group" role="group" aria-label="Basic example">
-                                    <button type="button" style="font-size:9px" class="btn btn-sm btn-info pl-3 pr-3 editSection editSec_${
+                                    <button type="button" style="font-size:13px" class="btn btn-sm text-white btn-info pl-3 pr-3 editSection editSec_${
                                         val.id
                                     }" id="${val.id}">Edit</button>
-                                    <button type="button" style="font-size:9px" class="btn btn-sm btn-danger pl-3 pr-3 deleteSection deleteSec_${
+                                    <button type="button" style="font-size:9px" class="btn btn-sm text-white btn-danger pl-3 pr-3 deleteSection deleteSec_${
                                         val.id
                                     }" id="${
                         val.id
-                    }"><i class="fas fa-times"></i></button>
+                    }">Delete
                                 </div>
                             </td>
                         </tr>
@@ -62,7 +62,7 @@ const sectionTable = () => {
             $("#sectionTable").html(htmlHold);
         })
         .fail(function (jqxHR, textStatus, errorThrown) {
-            getToast("error", "Eror", errorThrown);
+            getToast("error", "Error", errorThrown);
         });
 };
 sectionTable();

@@ -21,7 +21,7 @@
                         <div class="col-lg-5 col-md-8">
                             <p style="font-size: 25px;"><i class="far fa-address-card"></i>&nbsp;&nbsp;Enrolle's Today [ Grade {{ Auth::user()->chairman_info->grade_level }} Student ]</p>
                         </div>
-                        <div class="col-lg-2 col-md-2 ">
+                        {{-- <div class="col-lg-2 col-md-2 ">
                             <div class="btn-group my-4 float-right" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-primary" id="btnModalExport"><i
                                         class="fas fa-file-export"></i>&nbsp;Export
@@ -30,7 +30,7 @@
                                         class="fas fa-plus-circle"></i>&nbsp;Student
                                 </button>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

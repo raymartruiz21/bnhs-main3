@@ -193,7 +193,7 @@ $("input[name='roll_no']").on("blur", function () {
                 }
             })
             .fail(function (jqxHR, textStatus, errorThrown) {
-                getToast("error", "Eror", errorThrown);
+                getToast("error", "Error", errorThrown);
             });
     }
 });
@@ -328,7 +328,7 @@ $("#enrollForm").submit(function (e) {
         })
             .done(function (data) {
                 $("input[name='roll_no']").removeClass("is-valid");
-                getToast("success", "Ok", "Successfully added new enrolled");
+                getToast("success", "Successfully", " added new enrolled");
                 $(".btnSaveEnroll").html("Enroll").attr("disabled", false);
                 document.getElementById("enrollForm").reset();
                 $("#last_school").hide();
@@ -339,7 +339,7 @@ $("#enrollForm").submit(function (e) {
                 }, 1500);
             })
             .fail(function (jqxHR, textStatus, errorThrown) {
-                getToast("error", "Eror", errorThrown);
+                getToast("error", "Error", errorThrown);
                 $(".btnSaveEnroll").html("Enroll").attr("disabled", false);
             });
     } else {
@@ -596,14 +596,12 @@ $(".btnGenerate").on("click", function (e) {
     let mystatus = $("#mystatus").val();
     console.log(mystatus);
     window.open(
-        `export/excel/${myFormat}/${mystatus}/${current_curriculum}/${current_glc}`,
-        "_blank"
-    );
+        `export/excel/${myFormat}/${mystatus}/${current_curriculum}/${current_glc}`, "_blank" );
 });
 
 /**
  *
- * ----------------------  Mass sectioing fucntionalities --------------------------------
+ * ----------------------  Mass sectioing fucntions --------------------------------
  *
  */
 filterSection(current_curriculum);
@@ -656,13 +654,13 @@ $("#massSectioningForm").on("submit", function (e) {
                     $("#sectionGrouping").fadeOut(1000);
                     monitorSection(current_curriculum);
                     findTableToRefresh(current_curriculum);
-                    getToast("success", "Successfully", "Enrolled");
+                    getToast("success", "Successfully", "added new Enrolled");
                     tableCurriculum.ajax.reload();
                 }
             })
             .fail(function (jqxHR, textStatus, errorThrown) {
                 $(".btnmassSectioning").html("Save").attr("disabled", false);
-                getToast("error", "Eror", errorThrown);
+                getToast("error", "Error", errorThrown);
                 $(".btnSaveSection").html("Submit").attr("disabled", false);
             });
     } else {

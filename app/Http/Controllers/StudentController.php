@@ -133,6 +133,50 @@ class StudentController extends Controller
         // return $data;
         return response()->json(['data' => $data]);
     }
+    // 
+    public function studentList($level,$year)
+    {
+        if ($level == "all") {
+            $data = Enrollment::select(
+                "enrollments.*",
+                "roll_no",
+                "enrollments.curriculum",
+                "students.isbalik_aral",
+                "students.last_schoolyear_attended",
+                "sections.section_name",
+                "strands.strand",
+                DB::raw("CONCAT(students.student_lastname,', ',students.student_firstname,' ',students.student_middlename) as fullname")
+            )->orderBy('sections.section_name')
+                ->join('students', 'enrollments.student_id', 'students.id')
+                ->leftjoin('strands', 'enrollments.strand_id', 'strands.id')
+                ->leftjoin('sections', 'enrollments.section_id', 'sections.id')
+                ->join('school_years', 'enrollments.school_year_id', 'school_years.id')
+                // ->where('school_years.status', 1)
+                ->where('school_years.id', $year)
+                ->get();
+        } else {
+            $data = Enrollment::select(
+                "enrollments.*",
+                "roll_no",
+                "enrollments.curriculum",
+                "students.isbalik_aral",
+                "students.last_schoolyear_attended",
+                "sections.section_name",
+                "strands.strand",
+                DB::raw("CONCAT(students.student_lastname,', ',students.student_firstname,' ',students.student_middlename) as fullname")
+            )->orderBy('sections.section_name')
+                ->join('students', 'enrollments.student_id', 'students.id')
+                ->leftjoin('strands', 'enrollments.strand_id', 'strands.id')
+                ->leftjoin('sections', 'enrollments.section_id', 'sections.id')
+                ->join('school_years', 'enrollments.school_year_id', 'school_years.id')
+                // ->where('school_years.status', 1)
+                ->where('school_years.id', $year)
+                ->where('enrollments.grade_level', $level)
+                ->get();
+        }
+
+        return response()->json(['data' => $data]);
+    }
 
     public function destroy(Student $student)
     {
