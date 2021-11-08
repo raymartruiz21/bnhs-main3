@@ -85,7 +85,7 @@
                                     <div class="col-md-6 col-lg-4">
                                         <div class="row">
                                             <div class="form-group col-12 mb-3">
-                                                <label class="form-label">Learning Reference Number (LRN)</label>
+                                                <label class="form-label ">Learning Reference Number (LRN)</label>
                                                 <input name="roll_no" type="text" class="form-control" onkeypress="return numberOnly(event)" maxlength="12" required autofocus>
                                             </div>
                                             <div class="form-group col-12 mb-3">

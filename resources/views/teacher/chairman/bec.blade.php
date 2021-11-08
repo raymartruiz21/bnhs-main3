@@ -38,9 +38,9 @@
             
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <div class="row sectionListAvailable mb-3"></div>
                     <div class="card">
                         <div class="card-body">
+                            <div class="row sectionListAvailable mb-3"></div>
     
                             {{-- <div class="table-responsive"> --}}
                             <form id="massSectioningForm" method="POST">
@@ -66,7 +66,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td colspan="9" class="text-center">No available data</td>
+                                            <td colspan="11" class="text-center">No available data</td>
                                         </tr>
                                     </tbody>
                                 </table>

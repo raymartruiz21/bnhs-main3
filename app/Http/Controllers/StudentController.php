@@ -127,7 +127,7 @@ class StudentController extends Controller
             $arr['student_contact'] = $value->student_contact;
             $arr['gender'] = $value->gender;
             $arr['username'] = $value->username;
-            $arr['orig_password'] = Crypt::decrypt($value->orig_password);
+            // $arr['orig_password'] = Crypt::decrypt($value->orig_password);
             $data[] = $arr;
         }
         // return $data;
@@ -322,6 +322,7 @@ class StudentController extends Controller
             ->where('subjects.grade_level', $gl)
             ->get();
     }
+    
     public function backsubject()
     {
         return view('student/backsubject');

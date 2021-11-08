@@ -16,32 +16,37 @@ const studentTable = $("#studentTable").DataTable({
             data: null,
             render: function (data) {
                 return (
-                    data.student_lastname +
-                    ", " +
                     data.student_firstname +
+                    ", " +
+                    data.student_middlename +
                     " " +
-                    data.student_middlename
+                    data.student_lastname
                 );
             },
         },
-        { data: "gender" },
         { data: "student_contact" },
-        { data: "username" },
-        { data: "username" },
+        { data: "gender" },
         { data: "username" },
         // { data: "orig_password" },
         {
             data: null,
             render: function (data) {
-                return `<button type="button" class="btn btn-sm text-white btn-danger sdelete btnDelete_${data.id}  pt-0 pb-0 pl-2 pr-2" id="${data.id}">
-                <i class="fas fa-user-times"></i>
-                </button>&nbsp;
-                <button type="button" class="btn btn-sm text-white btn-info sedit btnEdit_${data.id}  pt-0 pb-0 pl-2 pr-2" id="${data.id}">
-                <i class="fas fa-edit"></i>
-                </button>&nbsp;
-                    <a href="student/view/record/${data.id}" class="btn btn-sm text-white btn-secondary vstudent btnView_${data.id} pt-0 pb-0 " id="${data.id}">
-                         <i class="fas fa-eye"></i>
-                    </a>
+                // return `<button type="button" class="btn btn-sm btn-warning sdelete btnDelete_${data.id}  pt-0 pb-0 pl-2 pr-2" id="${data.id}">
+                // <i class="fas fa-user-times"></i>
+                // </button>&nbsp;
+                // <button type="button" class="btn btn-sm btn-info sedit btnEdit_${data.id}  pt-0 pb-0 pl-2 pr-2" id="${data.id}">
+                // <i class="fas fa-edit"></i>
+                // </button>&nbsp;
+                //     <a href="student/view/record/${data.id}" class="btn btn-sm btn-secondary vstudent btnView_${data.id} pt-0 pb-0 " id="${data.id}">
+                //          <i class="fas fa-eye"></i>
+                //     </a>
+                // `;
+                return `    
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" style="font-size:12px" class="btn btn-sm text-white btn-info sedit btnEdit_${data.id}" id="${data.id}">Edit </button>
+                    <button type="button" style="font-size:12px" class="btn btn-sm text-white btn-danger pl-3 pr-3 sdelete btnDelete_${data.id}" id="${data.id}">Delete</button>
+                    <a href="student/view/record/${data.id}" class="btn btn-sm btn-dark vstudent btnView_${data.id} pt-0 pb-0 " id="${data.id}">View</a>
+                </div>
                 `;
             },
             /**

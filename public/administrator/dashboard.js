@@ -114,6 +114,35 @@ loadDataSex();
 // };
 // loadDataSex();
 
+// let populationByCurriculum = (data) => {
+//     var cbc = document.getElementById("myChart3").getContext("2d");
+//     return new Chart(cbc, {
+//         type: "pie",
+//         data: {
+//             datasets: [
+//                 {
+//                     data: [data.stem, data.bec, data.spa, data.spj, data.grdE, data.grdT],
+//                     backgroundColor: [
+//                         "#ff5050",
+//                         "#ff9933",
+//                         "#00e673",
+//                         "#6666ff",
+//                         "#00ccff",
+//                         "#cc33ff",
+//                     ],
+//                     label: "Dataset 1",
+//                 },
+//             ],
+//             labels: ["GRADE 7", "GRADE 8", "GRADE 9", "GRADE 10", "GRADE 11", "GRADE 12"],
+//         },
+//         options: {
+//             responsive: true,
+//             legend: {
+//                 position: "bottom",
+//             },
+//         },
+//     });
+// };
 let populationByCurriculum = (data) => {
     var cbc = document.getElementById("myChart3").getContext("2d");
     return new Chart(cbc, {
@@ -131,7 +160,7 @@ let populationByCurriculum = (data) => {
                     label: "Dataset 1",
                 },
             ],
-            labels: ["STEM", "BEC", "SPA", "SPJ"],
+            labels: ["SOC", "BEC", "SPA", "SPJ"],
         },
         options: {
             responsive: true,
@@ -153,7 +182,7 @@ let loadDataCurriculum = () => {
         })
         .fail(function (jqxHR, textStatus, errorThrown) {
             console.log(jqxHR, textStatus, errorThrown);
-            // getToast("error", "Eror", errorThrown);
+            getToast("error", "Error", errorThrown);
         });
 };
 loadDataCurriculum();

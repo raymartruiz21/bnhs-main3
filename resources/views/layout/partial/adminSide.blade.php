@@ -23,21 +23,29 @@
     <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
         <i class="fas fa-clipboard-list nav-icon"></i>Management</a>
         <ul class="nav-group-items">
-        <li class="nav-item{{ request()->is('admin/my/chairman')?'active':'' }}">
-            <a class="nav-link" href="{{ route('admin.chairman') }}"><span class="nav-icon fas fa-chalkboard-teacher"></span>Assign Chairman</a>
-        </li>
-        <li class="nav-item{{ request()->is('admin/my/subject')?'active':'' }}">
-            <a class="nav-link" href="{{ route('admin.subject') }}"><span class="nav-icon far fa-file-alt"></span>Manage Subject</a>
-        </li>
-        <li class="nav-item{{ request()->is('admin/my/assign')?'active':'' }}">
-            <a class="nav-link" href="{{ route('admin.assign') }}"><span class="nav-icon far fa-bookmark"></span>Assign Subject Teacher</a>
-        </li>
-        <li class="nav-item{{ request()->is('admin/my/section')?'active':'' }}">
-            <a class="nav-link" href="{{ route('admin.section') }}"><span class="nav-icon fas fa-undo"></span>Manage Class Adviser</a>  
-        </li>
-        <li class="nav-item{{ request()->is('admin/my/strand')?'active':'' }}">
-            <a class="nav-link" href="{{ route('admin.strand') }}"><span class="nav-icon fas fa-server"></span> SHS Track &amp; Strand</a>
-        </li>
+            <li class="nav-item {{ request()->is('admin/my/chairman')?'active':'' }}">
+                <a class="nav-link" href="{{ route('admin.chairman') }}"><span class="nav-icon fas fa-chalkboard-teacher"></span>Assign Chairman</a>
+            </li>
+            <li class="nav-item {{ request()->is('admin/my/subject')?'active':'' }}">
+                <a class="nav-link" href="{{ route('admin.subject') }}"><span class="nav-icon far fa-file-alt"></span>Manage Subject</a>
+            </li>
+            <li class="nav-item {{ request()->is('admin/my/assign')?'active':'' }}">
+                <a class="nav-link" href="{{ route('admin.assign') }}"><span class="nav-icon far fa-bookmark"></span>Assign Subject Teacher</a>
+            </li>
+            <li class="nav-item {{ request()->is('admin/my/section')?'active':'' }}">
+                <a class="nav-link" href="{{ route('admin.section') }}"><span class="nav-icon fas fa-undo"></span>Manage Class Adviser</a>  
+            </li>
+            {{-- <li class="nav-item {{ request()->is('admin/my/schedule')?'active':'' }}">
+                <a class="nav-link" href="{{ route('admin.schedule') }}"><i class="nav-icon fas fa-calendar-alt"></i><span>Schedule</span></a>
+            </li> --}}
+            <li class="nav-item {{ request()->is('admin/my/strand')?'active':'' }}">
+                <a class="nav-link" href="{{ route('admin.strand') }}"><span class="nav-icon fas fa-server"></span> SHS Track &amp; Strand</a>
+            </li>
+            
+            {{-- <li class="{{ request()->is('admin/my/schedule')?'active':'' }}">
+    <a class="nav-link" href="{{ route('admin.schedule') }}">
+        <i class="fas fa-calendar-alt"></i><span>Schedule</span></a>
+    </li> --}}
         </ul>
     </li>
 

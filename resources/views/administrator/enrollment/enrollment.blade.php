@@ -31,7 +31,9 @@
                                 <option value="11">Grade 11</option>
                                 <option value="12">Grade 12</option>
                             </select>
-                            <button class="btn btn-primary" id="button-addon2" name="btnExport" type="button">Export Enrollee</button>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary" id="button-addon2" name="btnExport" type="button"><i class="fas fa-file-export"></i>&nbsp;&nbsp;Export Enrollee</button>
                         </div>
 
                         {{-- <div class="form-group my-3">

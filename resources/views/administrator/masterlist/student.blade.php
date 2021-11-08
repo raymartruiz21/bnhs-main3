@@ -23,13 +23,13 @@
                             <i class="fas fa-plus-circle"></i>&nbsp;Add Student
                         </button>
 
-                        <div class="input-group mb-3">
+                        {{-- <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupSelect01">Filter</label>
-                            <select class="form-select" id="inputGroupSelect01"  name="school_year_id">
+                            <select class="form-select" id="inputGroupSelect01"  name="school_year_id"> --}}
                                 {{-- @foreach ($yearList as $item)
                                     <option value="{{ $item->id }}" {{ $item->status=='1'?'selected':'' }}>{{ $item->from.'-'.$item->to }}</option>
                                 @endforeach --}}
-                            </select>
+                            {{-- </select>
                             <select class="form-select" id="inputGroupSelect01"  name="selectedGL">
                                 <option value="all">All</option>
                                 <option value="7">Grade 7</option>
@@ -40,7 +40,7 @@
                                 <option value="12">Grade 12</option>
                             </select>
                             <button class="btn btn-info text-white" id="button-addon2" name="btnExport" type="button">Export Enrollee</button>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -49,17 +49,15 @@
                 <div class="card">
                     <div class="card-body mt-2">
                         <div class="table-responsive">
-                            <table class="table table-striped" id="studentTable" style="font-size: 13px;">
+                            <table class="table table-striped" id="studentTable">
                                 <thead>
                                     <tr>
                                         <th>LRN</th>
                                         <th>Fullname</th>
                                         <th>Gender</th>
                                         <th>Contact No.</th>
-                                        <th>Curriculum | Strand</th>
-                                        <th>Section</th>
                                         <th>Username</th>
-                                        {{-- <th>Password</th> --}}
+                                        {{-- <th>Passwsord</th> --}}
                                         <th width="10%">Action</th>
                                     </tr>
                                 </thead>

@@ -77,9 +77,10 @@
                     <div class="col-md-4">
                         <!-- <div class="row"> -->
                             @if (isset($data))
-                            {{empty($data->school_enrollment_url)}}
+                            {{-- {{empty($data->school_enrollment_url)}} --}}
                             <!-- <div class="col-lg-4"> -->
                                 <div class="card">
+                                    <div class="card-header">Manage Enrollment Status</div>
                                     <div class="card-body pb-0">
                                         <form id="enrollStatusForm">@csrf
                                             <div class="row">

@@ -125,11 +125,7 @@ $("#enrollForm").submit(function (e) {
     })
         .done(function (data) {
             if (data.warning) {
-                getToast(
-                    "warning",
-                    "Warning",
-                    data.warning + ", please contact the administrator"
-                );
+                getToast("warning", "Warning", data.warning + ", Please contact the administrator" );
                 $(".btnEnroll").html("Submit");
                 $(".btnEnroll").attr("disabled", false);
             } else {
@@ -143,6 +139,6 @@ $("#enrollForm").submit(function (e) {
         .fail(function (jqxHR, textStatus, errorThrown) {
             $(".btnEnroll").html("Submit");
             $(".btnEnroll").attr("disabled", false);
-            getToast("error", "Eror", errorThrown);
+            getToast("error", "Error", errorThrown);
         });
 });

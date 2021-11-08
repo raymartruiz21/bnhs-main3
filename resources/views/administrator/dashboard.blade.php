@@ -94,7 +94,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 col-lg-12 col-12 col-sm-12 mb-3">
+                        {{-- <div class="col-md-12 col-lg-12 col-12 col-sm-12 mb-3">
                             <div class="card">
                                 <div class="card-header">
                                     <h6>Population by Grade Level</h6>
@@ -103,7 +103,7 @@
                                     <canvas id="myChart2"></canvas>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
     

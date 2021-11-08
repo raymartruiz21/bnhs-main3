@@ -69,5 +69,37 @@ class ChartController extends Controller
         } else {
             return false;
         }
+
+        // if (Enrollment::count() > 0) {
+        //     $array = array();
+        //     $stem = Enrollment::select(DB::raw("COUNT(if (grade_level='7',1,NULL)) as stem"))
+        //         ->where('enroll_status', 'Enrolled')
+        //         ->where('school_year_id', Config::get('activeAY')->id)
+        //         ->pluck('stem');
+        //     $bec = Enrollment::select(DB::raw("COUNT(if (grade_level='8',1,NULL)) as bec"))
+        //         ->where('enroll_status', 'Enrolled')
+        //         ->where('school_year_id', Config::get('activeAY')->id)
+        //         ->pluck('bec');
+        //     $spa = Enrollment::select(DB::raw("COUNT(if (grade_level='9',1,NULL)) as spa"))
+        //         ->where('enroll_status', 'Enrolled')
+        //         ->where('school_year_id', Config::get('activeAY')->id)
+        //         ->pluck('spa');
+        //     $spj = Enrollment::select(DB::raw("COUNT(if (grade_level='10',1,NULL)) as spj"))
+        //         ->where('enroll_status', 'Enrolled')
+        //         ->where('school_year_id', Config::get('activeAY')->id)
+        //         ->pluck('spj');
+        //     $grdE = Enrollment::select(DB::raw("COUNT(if (grade_level='11',1,NULL)) as grdE"))
+        //         ->where('enroll_status', 'Enrolled')
+        //         ->where('school_year_id', Config::get('activeAY')->id)
+        //         ->pluck('grdE');
+        //     $grdT = Enrollment::select(DB::raw("COUNT(if (grade_level='12',1,NULL)) as grdT"))
+        //         ->where('enroll_status', 'Enrolled')
+        //         ->where('school_year_id', Config::get('activeAY')->id)
+        //         ->pluck('grdT');
+        //     array_push($array, ['stem' => $stem[0], 'bec' => $bec[0], 'spa' => $spa[0], 'spj' => $spj[0], 'grdE' => $grdE[0], 'grdT' => $grdT[0]]);
+        //     return response()->json($array);
+        // } else {
+        //     return false;
+        // }
     }
 }

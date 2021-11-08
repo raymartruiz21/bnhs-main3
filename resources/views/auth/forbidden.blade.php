@@ -4,27 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>PNOP &mdash; Login</title>
-
-    <!-- General CSS Files -->
+    <title>eBNHS &mdash; Login</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome/css/all.css') }}">
-
-    <!-- CSS Libraries -->
-    {{-- <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css"> --}}
-
-    <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/components.css') }}">
-    <style>
-        .center-screen {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            /* text-align: center; */
-            min-height: 100vh;
-        }
-    </style>
 </head>
 
 <body>
@@ -33,14 +17,14 @@
             <div class="container mt-5">
                 <div class="page-error">
                     <div class="page-inner">
-                        <img src="{{ asset('image/logo/logo.png') }}" alt="">
+                        <img src="{{ asset('image/logo/bn.jpg') }}" alt="" class="img-fluid rounded-circle" style="height: 150px;">
 
                         <div class="page-description mt-5">
-                            <h3>Online Enrollment has been ended <br> please contact or go to school</h3>
+                            <h3>Online Enrollment has been ended. <br> Please contact or go to school for the Admission</h3>
                             <br><br>
-                            <p><i class="fa fa-address-book"></i> 09918742564</p>
-                            <p><i class="fa fa-at"></i> pnhs@gmail.com</p>
-                            <p><i class="fa fa-map-marker-alt"></i> Zone 2, Lapaz Pawili, Pili Camarines Sur</p>
+                            <p><i class="fa fa-address-book text-primary"></i> 09918742564</p>
+                            <p><i class="fa fa-at text-primary"></i> bnhs@gmail.com</p>
+                            <p><i class="fa fa-map-marker-alt text-primary"></i> Balaogan, Bula, Camarines Sur</p>
                         </div>
                     </div>
                 </div>

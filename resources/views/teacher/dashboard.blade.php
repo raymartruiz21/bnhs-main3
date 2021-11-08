@@ -19,22 +19,20 @@
                     <div class="row dashMonitor"></div>
                 @endif
                 <div class="row">
-                    <div class="col-lg-6">
-                        @foreach ($sectionAvail as $item)
-                        <div class="col-lg-4 col-md-4">
-                            <div class="card ">
-                                <div class="card-body">
-                                    @if ($sectionAvail->count()!=0)
-                                    <h4 class="lead"><b>My Load Section</b></h4>
-                                    @endif
-                                    <hr>
-                                    <h4 class="lead ">{{ $item->section_name }}</h4>
-                                    <a href="{{ route('teacher.grading') }}" class="btn btn-info text-white btn-block"><i class="fas fa-eye"></i> View Student</a>
-                                </div>
+                @foreach ($sectionAvail as $item)
+                    <div class="col-lg-3 col-md-4 col-12 mb-3">
+                        <div class="card ">
+                            <div class="card-body">
+                                @if ($sectionAvail->count()!=0)
+                                <h4 class="lead"><b>My Assigned Section</b></h4>
+                                @endif
+                                <hr>
+                                <h4 class="lead ">{{ $item->section_name }}</h4>
+                                <a href="{{ route('teacher.grading') }}" class="btn btn-info text-white btn-block"><i class="fas fa-eye"></i> View Student</a>
                             </div>
                         </div>
-                        @endforeach
-                    </div><!-- col-lg-6 -->
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
